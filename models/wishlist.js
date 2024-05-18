@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const wishlistSchema = new mongoose.Schema({
-  name: {
+  title: {
     type: String,
     minlength: 2,
     maxlength: 50,
@@ -9,7 +9,12 @@ const wishlistSchema = new mongoose.Schema({
   },
   deadline: {
     type: Date,
-
+    validate: {
+      validator(v) {
+        return v > Date.now();
+      },
+      message: (props) => `${props.value} is not a valid date!`,
+    },
   },
   wishes: [{
     type: mongoose.Schema.Types.ObjectId,
