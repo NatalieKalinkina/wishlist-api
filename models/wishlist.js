@@ -21,6 +21,11 @@ const wishlistSchema = new mongoose.Schema({
     ref: 'wish',
     default: [],
   }],
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'user',
+    required: true,
+  },
 });
 
 module.exports = mongoose.model('wishlist', wishlistSchema);
