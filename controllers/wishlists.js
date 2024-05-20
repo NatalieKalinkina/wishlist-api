@@ -47,6 +47,9 @@ module.exports.createWishlist = (req, res, next) => {
     });
 };
 
+module.exports.addWishToWishlist = (req,  res, next) => {
+
+}
 // TODO: добавить updateWishlist
 
 module.exports.removeWishlist = (req, res, next) => {

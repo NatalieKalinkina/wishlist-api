@@ -7,6 +7,7 @@ const {
 
 router.get('/', getWishlists);
 router.post('/', createWishlist);
+router.post('/:wishlistId', addWishToWishlist);
 router.delete('/:wishlistId', removeWishlist);
 
 module.exports = router;
